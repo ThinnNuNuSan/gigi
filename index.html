@@ -1,85 +1,136 @@
 <!DOCTYPE html>
 <html>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <head>
-        <link rel="shortcut icon"href="image/logo.png"/>
-        <title>Treasure Net | Level 3 Class</title>
+        <link rel="shortcut icon" href="logo.png">
+        <title>Home</title>
         <style>
-            body{font-family: Arial, Helvetica, sans-serif;}
-            .mainclass{background-image: url("image/backgroundblur.png");padding: 150px;text-align: center;background-position: center;background-color: #cccccc;}
-            ul{list-style-type: none;margin: 0;padding: 0;}
-            li{float: right;}
-            li a{text-decoration: none;color: black;padding: 18px 16px;display: block;}
-            li a:hover{background-color: rgba(0,0,0,0,2);}
-            button{padding: 10PX;}
-            .container{width: 70%;text-align: justify;margin: auto;}
-            footer{text-align: center;background-color:#474e5d;color: white;padding: 50px;}
+
+.container      {width: 100%; text-align: justify; margin: auto;}
+
+.header        {padding: 0px;
+                font-weight: bold; text-align: center;
+                background-color: rgb(94, 91, 91); color: white;
+                font-family: Arial, Helvetica, sans-serif;
+                letter-spacing: 1px; opacity: 0.8;
+                margin: 0; top:0; left: 0;
+                width: 100%; float: right; position: fixed; 
+                overflow: visible;}
+
+.header a      {float: right; font-size: 25px;
+                color: white; text-align: center; margin: 0px 5px;
+                padding: 15px 30px 20px 30px; text-decoration: none;}
+
+.dropdown      {float: right; overflow: hidden;}
+
+.dropdown .dropbtn {cursor: pointer; font-size: 25px;  
+                border: none; outline: none;
+                color: white; padding: 15px 30px 20px 30px;
+                background-color: inherit; font-family: inherit;
+                margin: 0px 5px;}
+
+.header a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {background-color: rgb(54, 50, 50);}
+
+.dropdown-content   {display: none; position: absolute;
+                background-color: #f9f9f9; min-width: 145px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); z-index: 1;}
+
+.dropdown-content a     {float: none; color: black;
+                padding: 12px 16px; text-decoration: none;
+                display: block; text-align: left;}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.show           {margin:60px 5px 0px 5px; display: block;}
+
+.active         {background: #c2c2c2;}
+
+            ul  {margin-right: 10px;}
+            
+            body{
+                background-image:url(image/forhome.jpg);
+                background-position: center;
+                background-repeat:no-repeat;
+                background-size:cover;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                
+            }
+            .mainclass{
+                padding: 100px 65px ;
+                color:rgb(255, 255, 255);
+                text-align:left;
+                font-family:monospace;
+                font-size:200%;}
+            
+            footer{
+                text-align: center;
+                background-color: rgb(0, 0, 0);
+                color: rgb(255, 255, 255);
+                padding:30px 20px 80px 20px;
+                opacity:0.7;
+                position: fixed; 
+                overflow: visible;
+                width:100%;
+                margin-top: 50px;
+                left: 0 ;
+                
+                
+            }
+           
         </style>
     </head>
-    <body>
-        <div class="container">
-        <ul>
-            <img src="image/tnlogo.png" alt="treasure net" width="190px" height="50px";>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="login.html">Login</a></li>
-        </ul>
-        </div>
-
-        <div class="mainclass">
-        <h1 style="font-size: 300%;">Computer Science Level-3</h1>
-        
-        <h3>This website is created by Treasure Net ICT Level 3 student.</h3>
-
-        <button onclick="window.location.href='studentlist.html'";>Student List</button>
-        </div>
-
-        <div>
-        <h2>Work with Content</h2>
-
-            <p>Myanmar, officially the Republic of the Union of Myanmar, also known as Burma (the official name until 1989), is a country in Southeast Asia.
-            Myanmar kyat ·Names of Myanmar · Myanmar Army · Chinese people in Myanmar.Myanmar, officially the Republic of the Union of Myanmar, also known as Burma.Myanmar, officially the Republic of the Union of Myanmar, also known as Burma (the official name until 1989), is a country in Southeast Asia.
-            Myanmar kyat ·Names of Myanmar · Myanmar Army · Chinese people in Myanmar.Myanmar, officially the Republic of the Union of Myanmar, also known as Burma</p>
+    <body >
+        <div class="header">
+            <div class="container">
+              <ul>
+                <img src="image/gh4.png" alt="treasure net" width="150px" height="55px">
+                <a href="contact.html">Contact</a>
+                <a href="fpabout.html">About</a>
+                <a href="booking.html">Booking</a>
     
+                    <div class="dropdown">
+                        <a class="dropbtn" onclick="myFunction()">Menu<i class="fa fa-caret-down"></i></a>
+                          <div class="dropdown-content" id="myDropdown">
+                              <a href="fpmenu1.html">Food</a><hr>
+                              <a href="fpdrink1.html">Drinks</a>
+                          </div>
+                    </div>
+                        
+                <a class="active" href="index.html">Home</a>
+              </ul>                
+            </div>
+          </div>
+    
+      <script>
+    
+          function myFunction() {document.getElementById("myDropdown").classList.toggle("show");}
+    
+          window.onclick = function(event) {
+                if (!event.target.matches('.dropbtn')) {
+                  var dropdowns = document.getElementsByClassName("dropdown-content");
+                  var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                      openDropdown.classList.remove('show');}}
+                  }}
+    
+      </script>
+       <div>
+            <div class="mainclass">
+                    <p>Are you Hungry?</p>
+                    <p style="font-size:200%;"><b>Don't Wait!</b></p>
+                    <p>Can Booking Now</p>
+            </div>
         </div>
-
-        <div>
-        <h2>Work with Content</h2>   
-
-        <p>Myanmar, officially the Republic of the Union of Myanmar, also known as Burma (the official name until 1989), is a country in Southeast Asia.
-            Myanmar kyat ·Names of Myanmar · Myanmar Army ·Myanmar, officially the Republic of the Union of Myanmar, also known as Burma (the official name until 1989), is a country in Southeast Asia.
-            Myanmar kyat ·Names of Myanmar · Myanmar Army · Chinese people in Myanmar.Myanmar, officially the Republic of the Union of Myanmar, also known as Burma </p>
-        
-        </div>
-
-        <div>
-        <h2>Work with Content</h2>
-
-            <p>Myanmar, officially the Republic of the Union of Myanmar, also known as Burma (the official name until 1989), is a country in Southeast Asia.
-            Myanmar kyat ·Names of Myanmar · Myanmar Army · Chinese people in Myanmar.Myanmar, officially the Republic of the Union of Myanmar, also known as Burma.Myanmar, officially the Republic of the Union of Myanmar, also known as Burma (the official name until 1989), is a country in Southeast Asia.
-            Myanmar kyat ·Names of Myanmar · Myanmar Army · Chinese people in Myanmar.Myanmar, officially the Republic of the Union of Myanmar, also known as Burma</p>
-
-        </div>
-
-        <div>
-        <h2>Work with Content</h2>   
-
-            <p>Myanmar, officially the Republic of the Union of Myanmar, also known as Burma (the official name until 1989), is a country in Southeast Asia.
-            Myanmar kyat ·Names of Myanmar · Myanmar Army ·Myanmar, officially the Republic of the Union of Myanmar, also known as Burma (the official name until 1989), is a country in Southeast Asia.
-            Myanmar kyat ·Names of Myanmar · Myanmar Army · Chinese people in Myanmar.Myanmar, officially the Republic of the Union of Myanmar, also known as Burma </p>
-
-        </div>
-        </div>
-
+       
         <footer>
-        <h1>Treasure Net</h1>
-           <address>
-                Treasure Net ICT & Business Training Center<br>
-                No.4, Thuka Street, Hpa-an, Kayin State<br>
-                Zipcode 13011<br>
-                reasurenet.mm@gmail.com<br>
-                09.965136417, 058.22525
-            </address>
+                <h1>Golden House</h1>
+                <p> No.1, Kyw Zay Ya  Street, Hpa-an, Kayin State</p>
+                <p>09422943902_ 09425010079</p>
+                <a style="color: white;" href="#">GoldenHouse333.mm@gamil.com </a>
+           
         </footer>
     </body>
 </html>
